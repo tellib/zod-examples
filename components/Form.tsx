@@ -22,6 +22,7 @@ export default function Form() {
       onSubmit={handleSubmit((d) => {
         console.log(`Form submitted on the frontend`, d);
         serverLog(d);
+        alert("Form submitted");
       })}
       className="space-y-4"
     >
