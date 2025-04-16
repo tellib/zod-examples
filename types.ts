@@ -13,6 +13,9 @@ export const formSchema = z.object({
     .url({ message: "Must be a valid URL" })
     .optional()
     .or(z.literal("")),
+  date: z
+    .date({ required_error: "Date of birth is required" })
+    .max(new Date(), { message: "Your date of birth must be in the past." }),
 });
 
 export type Form = z.infer<typeof formSchema>;
